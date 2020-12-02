@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Task1
+  description: aslbidlufisdunfisudnfiunsd
+  deadline: 2020-12-02 22:11:11
+  setdate: 2020-12-02
+  project: one
+
+two:
+  name: Task2
+  description: aslbalisufbidlufbsibuf
+  deadline: 2020-12-02 22:11:11
+  setdate: 2020-12-02
+  project: two
