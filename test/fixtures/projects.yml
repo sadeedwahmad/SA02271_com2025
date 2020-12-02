@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+
+one:
+  name: Project
+  code: SecureRandom.uuid
+  description: This is some text
+  user: one
+
+two:
+  name: Project1
+  code: SecureRandom.uuid
+  description: This some more text
+  user: two
