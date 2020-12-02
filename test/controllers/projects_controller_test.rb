@@ -12,9 +12,11 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   #test "should get new" do
-  # get new_project_url
-  # assert_response :success
+  #get new_project_url
+  #assert_response :success
   #end
+
+
 
   test "should create project" do
     assert_difference('Project.count') do
