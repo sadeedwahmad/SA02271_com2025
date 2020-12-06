@@ -3,8 +3,9 @@ class CreateTasks < ActiveRecord::Migration[5.2]
     create_table :tasks do |t|
       t.string :name
       t.text :description
-      t.datetime :deadline
-      t.date :setdate
+      t.boolean :complete
+      t.datetime :start_time
+      t.datetime :end_time
       t.belongs_to :project, foreign_key: true
 
       t.timestamps
