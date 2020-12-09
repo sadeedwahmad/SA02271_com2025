@@ -2,14 +2,16 @@
 
 one:
   name: Task1
-  description: aslbidlufisdunfisudnfiunsd
-  deadline: 2020-12-02 22:11:11
-  setdate: 2020-12-02
+  description: Descriptioon
+  complete: false
+  start_time: 2020-12-02 22:11:11
+  end_time: 2020-12-03 23:11:11
   project: one
 
 two:
-  name: Task2
-  description: aslbalisufbidlufbsibuf
-  deadline: 2020-12-02 22:11:11
-  setdate: 2020-12-02
-  project: two
+  name: Task1
+  description: Some text £$%^1232342354
+  complete: false
+  start_time: 2020-12-02 22:11:11
+  end_time: 2020-12-03 23:11:11
+  project: one

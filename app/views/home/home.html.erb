@@ -1,34 +1,36 @@
 <div class=header>
   <h1>Home</h1>
   <% if !user_signed_in? %>
-  <div class = right>
-  <%= link_to 'Sign up', new_user_registration_path%>
-  </div>
-  <div class = right>
-  <%= link_to 'Sign in', new_user_session_path %>
-  </div>
+    <div class = right>
+      <%= link_to 'Sign up', new_user_registration_path%>
+    </div>
+    <div class = right>
+      <%= link_to 'Sign in', new_user_session_path %>
+    </div>
   <%end %>
   <% if user_signed_in? %>
-  <div class = right>
-  <%= link_to 'Sign out', destroy_user_session_path,
-              method: :delete %>
-  </div>
+    <div class = right>
+      <%= link_to 'Sign out', destroy_user_session_path,
+                  method: :delete %>
+    </div>
   <%end %>
   <div class = right>
-  <a href=<%='contact' %>>Contact Us</a>
+    <a href=<%='contact' %>>Contact Us</a>
   </div>
-    </div>
-<% if user_signed_in? %>
-<% @tasks = Task.all%>
+</div>
 
-<%= month_calendar events: @tasks do |date, tasks| %>
-  <%= date %>
 
-  <% tasks.each do |task| %>
+<div class =scroller>
+  <% if user_signed_in? %>
+    <% @tasks = Task.all%>
 
-    <div class = simple-calendar>
-      <%= task.name %>
-    </div>
+    <%= month_calendar attribute: :end_time, end_attribute: :end_time, events: @tasks do |date, tasks| %>
+      <%=date%>
+      <% tasks.each do |task| %>
+        <div class = simple-calendar>
+          <%= link_to task.name, task %>
+        </div>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
-<% end %>
-<% end %>
