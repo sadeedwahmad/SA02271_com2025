@@ -28,9 +28,16 @@
       <%=date%>
       <% tasks.each do |task| %>
         <div class = simple-calendar>
+          <% @proj = Project.find(task.project_id) %>
+          <% if @proj.user_id ==  current_user.id? %>
+
           <%= link_to task.name, task %>
+          <%= @proj.name%>
+          <%end%>
         </div>
         </div>
       <% end %>
     <% end %>
-  <% end %>
+    <%end %>
+
+
