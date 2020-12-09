@@ -19,7 +19,6 @@
   </div>
 </div>
 
-
 <div class =scroller>
   <% if user_signed_in? %>
     <% @tasks = Task.all%>
@@ -28,16 +27,17 @@
       <%=date%>
       <% tasks.each do |task| %>
         <div class = simple-calendar>
-          <% @proj = Project.find(task.project_id) %>
-          <% if @proj.user_id ==  current_user.id? %>
+          <%@proj = Project.find(task.project_id) %>
+          <%if @proj.user_id==current_user.id%>
 
-          <%= link_to task.name, task %>
-          <%= @proj.name%>
-          <%end%>
+
+            <%= link_to task.name, task %>
+            <%= @proj.name%>
+
         </div>
         </div>
+            <%end %>
       <% end %>
     <% end %>
-    <%end %>
-
+  <%end %>
 
