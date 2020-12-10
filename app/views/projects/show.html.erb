@@ -20,6 +20,26 @@
   <%= @project.user %>
 </p>
 
+<div class =scroller>
+  <% if user_signed_in? %>
+    <% @tasks = Task.all%>
+
+    <%= month_calendar attribute: :end_time, end_attribute: :end_time, events: @tasks do |date, tasks| %>
+      <%=date%>
+      <% tasks.each do |task| %>
+        <div class = simple-calendar>
+          <%if @project.id == task.project_id %>
+
+            <%= link_to task.name, task %>
+            </div>
+            </div>
+          <%end %>
+      <% end %>
+    <% end %>
+  <%end %>
+
+
+
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

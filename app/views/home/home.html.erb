@@ -1,6 +1,4 @@
 
-
-
 <div class =scroller>
   <% if user_signed_in? %>
     <% @tasks = Task.all%>
@@ -12,10 +10,11 @@
           <%@proj = Project.find(task.project_id) %>
           <%if @proj.user_id==current_user.id%>
             <%= link_to task.name, task %>
-            <%= @proj.name%>
+            <%= link_to @proj.name, @proj%>
             </div>
             </div>
           <%end %>
       <% end %>
     <% end %>
   <%end %>
+
