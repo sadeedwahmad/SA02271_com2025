@@ -15,10 +15,6 @@
   <%= @project.description %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @project.user %>
-</p>
 
 <div class =scroller>
   <% if user_signed_in? %>
@@ -38,9 +34,7 @@
     <% end %>
   <%end %>
 
-
-
-
+  <%= link_to 'Manage tasks', tasks_url %>
 <%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Home', home_path %>
 
