@@ -33,6 +33,8 @@ gem 'rails-controller-testing'
 # gem 'capistrano-rails', group: :development
 gem "simple_calendar", "~> 2.0"
 
+gem 'jquery-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

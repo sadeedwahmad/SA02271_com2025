@@ -1,23 +1,5 @@
-<div class=header>
-  <h1>Home</h1>
-  <% if !user_signed_in? %>
-    <div class = right>
-      <%= link_to 'Sign up', new_user_registration_path%>
-    </div>
-    <div class = right>
-      <%= link_to 'Sign in', new_user_session_path %>
-    </div>
-  <%end %>
-  <% if user_signed_in? %>
-    <div class = right>
-      <%= link_to 'Sign out', destroy_user_session_path,
-                  method: :delete %>
-    </div>
-  <%end %>
-  <div class = right>
-    <a href=<%='contact' %>>Contact Us</a>
-  </div>
-</div>
+
+
 
 <div class =scroller>
   <% if user_signed_in? %>
@@ -29,15 +11,11 @@
         <div class = simple-calendar>
           <%@proj = Project.find(task.project_id) %>
           <%if @proj.user_id==current_user.id%>
-
-
             <%= link_to task.name, task %>
             <%= @proj.name%>
-
-        </div>
-        </div>
-            <%end %>
+            </div>
+            </div>
+          <%end %>
       <% end %>
     <% end %>
   <%end %>
-

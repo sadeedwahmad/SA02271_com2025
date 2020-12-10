@@ -1,1 +1,1 @@
-$('#new-task a').parent().html("<%= j render 'form', task: @task %>")
+$('#new-task a').hide().parent().append("<%= j render 'form', task: @task %>")

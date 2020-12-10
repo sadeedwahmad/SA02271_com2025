@@ -1,0 +1,20 @@
+<div class=header>
+  <h1>Home</h1>
+  <% if !user_signed_in? %>
+    <div class = right>
+      <%= link_to 'Sign up', new_user_registration_path%>
+    </div>
+    <div class = right>
+      <%= link_to 'Sign in', new_user_session_path %>
+    </div>
+  <%end %>
+  <% if user_signed_in? %>
+    <div class = right>
+      <%= link_to 'Sign out', destroy_user_session_path,
+                  method: :delete %>
+    </div>
+  <%end %>
+  <div class = right>
+    <a href=<%='contact' %>>Contact Us</a>
+  </div>
+</div>

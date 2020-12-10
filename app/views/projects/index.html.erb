@@ -2,7 +2,7 @@
 
 <h1>Projects</h1>
 
-<table>
+<table id ="projects">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,20 +14,11 @@
   </thead>
 
   <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.code %></td>
-        <td><%= project.description %></td>
-        <td><%= project.user %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <%=render @projects %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Project', new_project_path %>
+<div id="new-project">
+<%= link_to 'New Project', new_project_path, remote:true %>
+</div>

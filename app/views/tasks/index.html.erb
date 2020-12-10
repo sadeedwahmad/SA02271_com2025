@@ -2,15 +2,26 @@
 
 <h1>Tasks</h1>
 
-<%= month_calendar events: @tasks do |date, tasks| %>
-  <%= date %>
+<table id="tasks">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Complete</th>
+    <th>StartTime</th>
+    <th>EndTime</th>
+    <th>ProjectID</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
 
-  <% tasks.each do |task| %>
-    <div>
-      <%= task.name %>
-    </div>
-  <% end %>
-<% end %>
+  <tbody>
+  <%= render @tasks %>
+  </tbody>
+</table>
 
+<br>
 
-<%= link_to 'New Task', new_task_path%>
+  <div id="new-task">
+<%= link_to 'New Task', new_task_path, remote: true%>
+  </div>
