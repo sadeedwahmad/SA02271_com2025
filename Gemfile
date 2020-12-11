@@ -35,6 +35,8 @@ gem "simple_calendar", "~> 2.0"
 
 gem 'jquery-rails'
 
+gem "paperclip", "~> 6.0.0"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

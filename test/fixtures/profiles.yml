@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Bobbyui2
+  email: bobby122@hotmail.co.uk
+  user: one
+
+two:
+  name: SomeUsername
+  email: someone@email.com
+  user: two

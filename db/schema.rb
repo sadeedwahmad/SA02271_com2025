@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_221111) do
+ActiveRecord::Schema.define(version: 2020_12_10_235217) do
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture_file_name"
+    t.string "picture_content_type"
+    t.integer "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "name", null: false

@@ -11,10 +11,10 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  #test "should get new" do
-  #get new_project_url
-  #assert_response :success
-  #end
+  test "should get new" do
+  get new_project_url
+  assert_response :success
+  end
 
 
 
@@ -31,10 +31,10 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  #test "should get edit" do
-  # get edit_project_url(@project)
-  #assert_response :success
-  #end
+  test "should get edit" do
+    get edit_project_url(@project)
+  assert_response :success
+  end
 
   test "should update project" do
     patch project_url(@project), params: { project: { code: @project.code, description: @project.description, name: @project.name, user_id: @user.id } }
