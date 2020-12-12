@@ -2,18 +2,20 @@ body {
   background-color: #fff;
   color: #333;
   margin: 33px;
-  font-family: Andale;
-  font-size: 13px;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: Andale;
-  font-size: 13px;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
   line-height: 18px;
 }
 
 pre {
+
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
@@ -43,6 +45,7 @@ div {
     margin-bottom: 10px;
   }
 }
+
 
 #notice {
   color: green;
@@ -84,3 +87,4 @@ label {
 img{
   border-radius: 50%;
 }
+

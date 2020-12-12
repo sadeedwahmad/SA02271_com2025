@@ -32,7 +32,9 @@
 en:
   home:
     title: My title
-    welcome: my welcome mesage!
+    welcome: my welcome message!
+    msg: Just click on a item, Task:Project
+    not_logged: You are not logged in, to use the site please log in
 
 
 
@@ -52,3 +54,40 @@ en:
   request_contact:
     no_email: You must supply an email address
     email_sent: Thank you. We will be in touch shortly.
+
+  header:
+    sign_in: Sign in
+    sign_out: Sign out
+    sign_up: Sign up
+    contact: Contact_us
+
+  headings:
+    task: Tasks
+    project: Projects
+    profile: Profile
+    cal: Your Calender
+
+
+
+  tables:
+    name: Name
+    code: Code
+    desc: Description
+    start: Set
+    end: Deadline
+
+  profile:
+    usrHeading: Username
+    emlHeading: Email
+    edit: Editing Profile
+    msg: Lets make a profile
+    new: New Profile
+
+  project:
+    edit: Editing Project
+    new: New Project
+
+
+  task:
+    edit: Editing Task
+
