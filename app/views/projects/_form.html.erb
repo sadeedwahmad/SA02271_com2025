@@ -1,5 +1,5 @@
-<%if user_signed_in? %>>
-<%= form_with(model: project) do |form| %>
+<%if user_signed_in? %>
+<%= form_with(model: project, validate:true) do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>

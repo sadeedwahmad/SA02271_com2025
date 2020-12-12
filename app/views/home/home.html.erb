@@ -1,6 +1,6 @@
+<% if user_signed_in? %>
+  <div class =scroller>
 
-<div class =scroller>
-  <% if user_signed_in? %>
     <% @tasks = Task.all%>
 
     <%= month_calendar attribute: :end_time, end_attribute: :end_time, events: @tasks do |date, tasks| %>
@@ -16,7 +16,6 @@
           <%end %>
       <% end %>
     <% end %>
-  <%end %>
 
   <table>
     <thead>
@@ -41,7 +40,7 @@
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-      <%end %>>
+      <%end %>
     </tbody>
   </table>
 
@@ -49,3 +48,7 @@
 
 
   <%= link_to 'Project Management services', projects_url%>
+<%end %>
+<% if !user_signed_in? %>
+  <p>You are not logged in, to use the site please log in </p>
+<%end %>
