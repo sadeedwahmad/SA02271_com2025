@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2020_12_10_235217) do
 
   create_table "profiles", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.integer "user_id"
+    t.string "name", null: false, uniqueness: true
+    t.string "email", null: false, uniqueness: true
+    t.integer "user_id", null: false, uniqueness: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture_file_name"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_12_10_235217) do
     t.string "name", null: false
     t.string "code", null: false
     t.text "description", default: ""
-    t.integer "user_id"
+    t.integer "user_id", null: false, uniqueness: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_12_10_235217) do
     t.boolean "complete"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer "project_id"
+    t.integer "project_id", null: false, uniqueness: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"

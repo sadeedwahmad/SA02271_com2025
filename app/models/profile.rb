@@ -3,8 +3,6 @@ class Profile < ApplicationRecord
   has_attached_file :picture
   do_not_validate_attachment_file_type :picture
 
-  validates :name, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
 
   
 
