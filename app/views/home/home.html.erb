@@ -3,21 +3,30 @@
   <p><%= t "home.msg" %></p>
   <div class =scroller>
 
-    <% @tasks = Task.all%>
+    <%@projects= Project.usermatch(current_user.id) %>
+    <% @projects.each do |project| %>
+      <%@tasks= Task.projmatch(project.id) %>
+      <%= month_calendar attribute: :end_time, end_attribute: :end_time, events: @tasks do |date, tasks| %>
+        <%=date%>
+        <% tasks.each do |task| %>
+          <div class = simple-calendar>
 
-    <%= month_calendar attribute: :end_time, end_attribute: :end_time, events: @tasks do |date, tasks| %>
-      <%=date%>
-      <% tasks.each do |task| %>
-        <div class = simple-calendar>
-          <%@proj = Project.find(task.project_id) %>
-          <%if @proj.user_id==current_user.id%>
             <%= link_to task.name, task %>
-            <%= link_to @proj.name, @proj%>
-            </div>
-            </div>
-          <%end %>
+            <%= link_to project.name, project%>
+          </div>
+          </div>
+
+        <% end %>
       <% end %>
-    <% end %>
+
+
+    <%end %>
+
+
+
+
+
+
 
 
     <h1>Projects </h1>

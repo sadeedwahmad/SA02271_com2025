@@ -18,8 +18,8 @@
 
 <div class =scroller>
   <% if user_signed_in? %>
+    <%@tasks = Task.projmatch(@project.id) %>
 
-    <% @tasks = Task.all%>
     <%= month_calendar attribute: :end_time, end_attribute: :end_time, events: @tasks do |date, tasks| %>
       <%=date%>
       <% tasks.each do |task| %>

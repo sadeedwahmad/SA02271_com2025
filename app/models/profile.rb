@@ -9,5 +9,6 @@ class Profile < ApplicationRecord
 
 
 
+  scope :userprof, -> (useri){where(user_id: useri)}
 
 end
