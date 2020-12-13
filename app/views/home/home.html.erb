@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <h1><%=t "headings.cal" %></h1>
-  <p><%= t "home.msg" %>></p>
+  <p><%= t "home.msg" %></p>
   <div class =scroller>
 
     <% @tasks = Task.all%>
@@ -53,5 +53,5 @@
     <%= link_to 'Project Management services', projects_url%>
 <%end %>
 <% if !user_signed_in? %>
-  <p><%= t "home.not_logged" %>> </p>
+  <p><%= t "home.not_logged" %> </p>
 <%end %>

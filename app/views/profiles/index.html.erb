@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 <% if user_signed_in?%>
 <h1><%= t "headings.profile" %></h1>
+
+
+
   <%profile = Profile.find_by_user_id(current_user.id) %>
   <%if profile ==nil %>
     <%= link_to 'New Profile', new_profile_path %>
@@ -8,15 +11,14 @@
   <%end %>
 
   <%if profile != nil %>
-  <%= image_tag profile.picture.url,width:"150" ,height:"150" %>
-  <h2><%= t "profile.usrHeading" %></h2>
-  <p><%= profile.name %></p>
-  <h2><%= t "profile.emlHeading" %></h2>
-  <p><%= profile.email %></p>
+    <%= image_tag profile.picture.url,width:"150" ,height:"150" %>
+    <h2><%= t "profile.usrHeading" %></h2>
+    <p><%= profile.name %></p>
+    <h2><%= t "profile.emlHeading" %></h2>
+    <p><%= profile.email %></p>
 
-  <p><%= link_to 'Edit', edit_profile_path(profile) %></p>
-  <p><%= link_to 'Delete Profile', profile, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <p><%= link_to 'Edit', edit_profile_path(profile) %></p>
+    <p><%= link_to 'Delete Profile', profile, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   <%end %>
-
 
 <%end %>

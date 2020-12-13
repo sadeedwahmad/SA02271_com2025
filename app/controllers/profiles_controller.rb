@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
@@ -20,6 +21,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1/edit
   def edit
   end
+
+
 
   # POST /profiles
   # POST /profiles.json

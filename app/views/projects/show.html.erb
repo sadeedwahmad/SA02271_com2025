@@ -18,8 +18,8 @@
 
 <div class =scroller>
   <% if user_signed_in? %>
-    <% @tasks = Task.all%>
 
+    <% @tasks = Task.all%>
     <%= month_calendar attribute: :end_time, end_attribute: :end_time, events: @tasks do |date, tasks| %>
       <%=date%>
       <% tasks.each do |task| %>
@@ -37,4 +37,5 @@
   <%= link_to 'Manage tasks', tasks_url %>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Home', home_path %>
+
 
