@@ -4,11 +4,10 @@
 
   <%@profiles = Profile.userprof(current_user.id).limit(1)%>
 
+
+
   <% @profiles.each do |profile| %>
-    <%if profile ==nil %>
-      <%= link_to 'New Profile', new_profile_path %>
-      <p><%= t "profile.msg" %></p>
-    <%end %>
+
 
     <%if profile != nil %>
       <%= image_tag profile.picture.url,width:"150" ,height:"150" %>
@@ -21,4 +20,6 @@
       <p><%= link_to 'Delete Profile', profile, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     <%end %>
   <%end %>
+  <%= link_to 'New Profile', new_profile_path %>
+  <p><%= t "profile.msg" %></p>
 <%end %>

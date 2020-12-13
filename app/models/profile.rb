@@ -5,8 +5,8 @@ class Profile < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
-  validates :user_id, presence: true, uniqueness: true
 
+  
 
 
   scope :userprof, -> (useri){where(user_id: useri)}

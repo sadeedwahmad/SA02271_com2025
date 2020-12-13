@@ -1,1 +1,4 @@
 $('#new-task a').hide().parent().append("<%= j render 'form', task: @task %>")
+$('#form_modal').on('shown.bs.modal', function(){
+    $('form[data-validate]').enableClientSideValidations();
+}).modal('show');
