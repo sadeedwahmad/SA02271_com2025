@@ -10,6 +10,7 @@ class ProfilesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get profiles_url
     assert_response :success
+
   end
 
   #fixed no id error
