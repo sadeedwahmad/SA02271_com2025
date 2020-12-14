@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_many :projects
   has_one :profile
 
-
+  #used default, provides complete login and secuirity functionallity
+  # i call functions based off in built devise commands
 end

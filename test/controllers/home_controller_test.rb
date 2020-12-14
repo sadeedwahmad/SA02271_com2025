@@ -5,7 +5,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get home_url
     assert_response :success
   end
-
+  #testing url and basic content
   test "should get contact" do
     get contact_url
     assert_response :success
@@ -15,6 +15,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_select 'p', 'Complete the form to contact us'
   end
 
+  #uses mailer and function from contact mailer
   test "should post request contact but no email" do
   post request_contact_url
   assert_response :redirect
@@ -22,6 +23,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   assert_nil flash[:notice]
   end
 
+  #calls function that was defined and passes values
   test "should post request contact" do
     post request_contact_url, params:
         {name: "Matthew", email: "matthew@me.com",

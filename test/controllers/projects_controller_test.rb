@@ -3,26 +3,24 @@ require 'test_helper'
 class ProjectsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @project = projects(:one)
-    @user = users(:one)
+    @user = users(:one) #fixtures fixed, used devise digest
   end
-
+  #tested index after front changes
   test "should get index" do
     get projects_url
     assert_response :success
   end
-
+  #fixed error
   test "should get new" do
   get new_project_url
   assert_response :success
   end
 
-
-
+  #changed params to work
   test "should create project" do
     assert_difference('Project.count') do
       post projects_url, params: { project: { code: @project.code, description: @project.description, name: @project.name, user_id: @user.id } }
     end
-
     assert_redirected_to project_url(Project.last)
   end
 

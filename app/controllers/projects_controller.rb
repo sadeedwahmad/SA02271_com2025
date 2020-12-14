@@ -18,9 +18,6 @@ class ProjectsController < ApplicationController
   end
 
 
-
-
-
   # GET /projects/1/edit
   def edit
   end
@@ -32,7 +29,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.js
+        format.js #format js for ajax and j query,
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else

@@ -28,7 +28,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.js
+        format.js #for ajax and jquery
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
@@ -72,5 +72,5 @@ class TasksController < ApplicationController
     # Only allow a list of trusted parameters through.
     def task_params
       params.require(:task).permit(:name, :description, :start_time, :end_time, :complete, :project_id)
-    end
+    end    #requires certain params, needs start time and end time for calender
 end

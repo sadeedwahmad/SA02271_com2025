@@ -5,8 +5,7 @@ class ContactMailer < ApplicationMailer
     @telephone = telephone
     @message = message
 
-
-    mail(cc: @email, subject: @name + @telephone, body: @message)
+    mail(cc: @email, subject: @name + @telephone, body: @message) #used mail cc as mail to didnt work
   end
 
 
