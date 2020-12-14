@@ -46,4 +46,24 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to tasks_url
   end
+
+  test 'should not save empty task' do
+    task = Task.new
+    task.save
+    refute task.valid?
+  end
+
+  test 'should save task' do
+    task = Task.new
+    task.name =  'Task1'
+    task.description= 'some text £$%^1232342354'
+    task.complete= false
+    task.start_time= '2020-12-02 22:11:11'
+    task.end_time= '2020-12-03 23:11:11'
+    task.project_id= @project.id
+    task.save
+    assert task.valid?
+  end
+
+
 end

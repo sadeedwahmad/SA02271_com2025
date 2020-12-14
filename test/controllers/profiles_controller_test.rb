@@ -46,4 +46,24 @@ class ProfilesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to profiles_url
   end
+
+  test 'should not save empty profile' do
+    profile = Profile.new
+    profile.save
+    refute profile.valid?
+  end
+
+  test 'should save valid profile' do
+    profile = Profile.new
+    profile.name = 'Username'
+    profile.email = 'Someemail@email.com'
+    profile.user_id = @user.id
+    profile.save
+    assert profile.valid?
+  end
+
+
+
+
+
 end

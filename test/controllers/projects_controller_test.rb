@@ -48,4 +48,46 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to projects_url
   end
+
+  test 'should not save empty project' do
+    project = Project.new
+    project.save
+    refute project.valid?
+  end
+
+  test 'should save valid project' do
+    project = Project.new
+    project.name = 'Project name'
+    project.code=  'ishdf879we9opfsh8f'
+    project.description= 'I love ruby on rails and toast'
+    project.user_id = @user.id
+    project.save
+    assert project.valid?
+  end
+
+  #secure uuid used for code, so projects always different
+  test 'should save duplicate project' do
+    project = Project.new
+    project.name = 'Project name'
+    project.code=  SecureRandom.uuid
+    project.description= 'I love ruby on rails and toast'
+    project.user_id = @user.id
+    project.save
+    assert project.valid?
+
+    project2= Project.new
+    project2.name = 'Project name'
+    project2.code=   SecureRandom.uuid
+    project2.description= 'I love ruby on rails and toast'
+    project2.user_id = @user.id
+    project2.save
+    assert project2.valid?
+
+    end
+
+
+
+
+
+
 end
